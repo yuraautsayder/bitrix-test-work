@@ -1,4 +1,7 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
+<?=GetMessage("TIME");?>
+<? echo time(); ?>
+</br>
 ---
 </br>
 <p><b><?= GetMessage("SIMPLECOMP_EXAM2_CAT_TITLE_71") ?></b></p>

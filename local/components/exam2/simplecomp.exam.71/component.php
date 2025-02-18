@@ -20,8 +20,9 @@ if (empty($arParams["CLASSIF_IBLOCK_ID"]))
 
 $arParams["PROPERTY_CODE"] = trim($arParams["PROPERTY_CODE"]);
 global $USER;
-
+global $CACHE_MANAGER;
 if ($this->startResultCache(false, array($USER->GetGroups()))) {
+	$CACHE_MANAGER->RegisterTag("iblock_id_3" . $IBLOCK_ID);
 	$arClassif = array();
 	$arClassifId = array();
 	$arResult["COUNT"] = 0;
