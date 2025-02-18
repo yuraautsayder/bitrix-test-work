@@ -1,27 +1,28 @@
 <?php
-return array (
-  'cache_flags' => 
+
+return array (
+  'cache_flags' =>
   array (
-    'value' => 
+    'value' =>
     array (
       'config_options' => 3600.0,
     ),
     'readonly' => false,
   ),
-  'cookies' => 
+  'cookies' =>
   array (
-    'value' => 
+    'value' =>
     array (
       'secure' => false,
       'http_only' => true,
     ),
     'readonly' => false,
   ),
-  'exception_handling' => 
+  'exception_handling' =>
   array (
-    'value' => 
+    'value' =>
     array (
-      'debug' => false,
+      'debug' => true,
       'handled_errors_types' => 4437,
       'exception_errors_types' => 4437,
       'ignore_silence' => false,
@@ -31,11 +32,11 @@
     ),
     'readonly' => false,
   ),
-  'connections' => 
+  'connections' =>
   array (
-    'value' => 
+    'value' =>
     array (
-      'default' => 
+      'default' =>
       array (
         'host' => 'localhost:3000',
         'database' => 'btrx-test',
@@ -47,9 +48,9 @@
     ),
     'readonly' => true,
   ),
-  'crypto' => 
+  'crypto' =>
   array (
-    'value' => 
+    'value' =>
     array (
       'crypto_key' => '5d09492b4faa2c0f96c28f613a1d62bf',
     ),
