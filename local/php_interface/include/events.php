@@ -2,6 +2,7 @@
 IncludeModuleLangFile(__FILE__);
 
 AddEventHandler("main", "OnBeforeEventAdd", array("Ex2", "Ex2_51"));
+AddEventHandler("main", "OnBeforeProlog", array("Ex2", "Ex2_94"));
 
 class Ex2
 {
@@ -35,6 +36,36 @@ class Ex2
 				"ITEM_ID" => $event,
 				"DESCRIPTION" => GetMessage("EX2_51_REPLACEMENT") . '-' . $arFields["AUTHOR"],
 			));
+		}
+	}
+	public static function Ex2_94()
+	{
+		global $APPLICATION;
+		$currentPage = $APPLICATION->GetCurDir();
+
+		if (\Bitrix\Main\Loader::includeModule("iblock")) {
+			$arFilter = array(
+				"IBLOCK_ID" => IBLOCK_META,
+				"NAME" => $currentPage
+			);
+			$arSelect = array(
+				"IBLOCK_ID",
+				"ID",
+				"PROPERTY_title",
+				"PROPERTY_description",
+			);
+
+			$ob = CIBlockElement::GetList(
+				array(),
+				$arFilter,
+				false,
+				false,
+				$arSelect
+			);
+			if ($arRes = $ob->Fetch()) {
+				$APPLICATION->SetPageProperty('title', $arRes["PROPERTY_TITLE_VALUE"]);
+				$APPLICATION->SetPageProperty('description', $arRes["PROPERTY_DESCRIPTION_VALUE"]);
+			}
 		}
 	}
 }
